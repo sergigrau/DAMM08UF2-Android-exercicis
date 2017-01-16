@@ -2,6 +2,7 @@ package edu.fje.dam2;
 
 import java.io.IOException;
 
+import android.Manifest;
 import android.app.ListActivity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,6 +11,7 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -33,14 +35,28 @@ import android.widget.Toast;
  */
 public class E03_ReproductorMusica extends ListActivity {
 
+    private static final int CONSTANT_PERMIS_READ_EXTERNAL_STORAGE = 1;
     SimpleCursorAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Cursor cursor = null;
-        cursor = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+
+        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            if (shouldShowRequestPermissionRationale(
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            }
+
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    CONSTANT_PERMIS_READ_EXTERNAL_STORAGE);
+            return;
+        }
+
+
+        Cursor cursor = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                 null, null, null, MediaStore.Audio.Media.TITLE);
 
         cursor = obtenirCursorPistes(this, cursor);
@@ -56,7 +72,7 @@ public class E03_ReproductorMusica extends ListActivity {
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         // construïm una notificació, els action van al mateix intent per simplificació
-        Notification n  = new Notification.Builder(this)
+        Notification n = new Notification.Builder(this)
                 .setContentTitle("Musica DAM2")
                 .setContentText("Android")
                 .setSmallIcon(R.drawable.sergigrau)
@@ -178,11 +194,8 @@ public class E03_ReproductorMusica extends ListActivity {
     private void reproduirPista(long _id) {
 
         MediaPlayer mp = new MediaPlayer();
-
         try {
-
-            Uri u = ContentUris.withAppendedId(
-                    MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, _id);
+            Uri u = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, _id);
 
             Log.i("dam2", u.toString());
             mp.setDataSource(this, u);

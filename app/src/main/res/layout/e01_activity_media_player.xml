@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/nomPista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="35dp"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/tempsPista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="35dp"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/botoPausa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:onClick="reproduir"
+        android:text="@string/reprodueix" />
+
+    <Button
+        android:id="@+id/botoParar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="parar"
+        android:text="@string/atura"
+        android:elevation="0dp" />
+
+</LinearLayout>

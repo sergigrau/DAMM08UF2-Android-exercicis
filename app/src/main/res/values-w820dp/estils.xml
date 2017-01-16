@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+     <style name="CodeFont.Vermell">
+        <item name="android:textColor">#FF0000</item>
+    </style>
+    <color name="color_personalitzat">#b0b0ff</color>
+<style name="TemaPersonalitzat" parent="android:Theme.Light">
+    <item name="android:windowBackground">@color/color_personalitzat</item>
+    <item name="android:colorBackground">@color/color_personalitzat</item>
+</style>
+</resources>

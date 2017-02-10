@@ -1,7 +1,7 @@
 # DAMM08UF2-Android-exercicis
 ![alt tag](https://developer.android.com/images/brand/Android_Robot_100.png)
 <h1>Android Exercises </h1>
-<p>programming exercises solutions to mobile devices class.</p>
+<p>Programming exercises solutions to mobile devices class.</p>
 
 <p>
 1. MediaPlayback
@@ -23,6 +23,9 @@
 </p>
 <p>
 7. Access to media library
+</p>
+<p>
+8. Services and Broadcasting
 </p>
 
 <sub>

@@ -2,7 +2,7 @@
 ![alt tag](https://developer.android.com/images/brand/Android_Robot_100.png)
 ![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Android_Studio_icon.svg/100px-Android_Studio_icon.svg.png)
 
-<h1>Android Exercises </h1>
+<h1>Class exercises of Android</h1>
 <p>Programming exercises solutions mobile devices.</p>
 
 1. MediaPlayback<br/>

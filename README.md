@@ -3,7 +3,7 @@
 ![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Android_Studio_icon.svg/100px-Android_Studio_icon.svg.png)
 
 <h1>Class exercises of Android</h1>
-<p>Programming exercises solutions mobile devices.</p>
+<p>Exercises of programming of mobile devices.</p>
 
 1. MediaPlayback<br/>
 2. Management of audio playback<br/>
